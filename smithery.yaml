@@ -1,0 +1,35 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      apiKey:
+        type: string
+        description: Your Claude API key from console.anthropic.com
+    required: []
+  commandFunction: |-
+    (config) => ({
+      command: "node",
+      args: ["packages/mcp/dist/index.js"],
+      env: {
+        ANTHROPIC_API_KEY: config.apiKey || ""
+      }
+    })
+
+info:
+  title: LibreChat SMB Edition
+  description: >
+    LibreChat pre-configured for small business AI implementation.
+    Includes MCP server support, Claude integration, workflow templates
+    for legal, finance, ops, and marketing teams.
+    Built and maintained by Nataliya Brovkina — Claude Implementation Specialist.
+  homepage: https://nataliyabrovkina.com
+  license: MIT
+  tags:
+    - librechat
+    - claude
+    - mcp
+    - smb
+    - ai-implementation
+    - workflow-automation
+    - small-business
